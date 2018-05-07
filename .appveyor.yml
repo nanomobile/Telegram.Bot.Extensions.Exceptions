@@ -1,0 +1,50 @@
+version: CI-Build-{build}
+max_jobs: 1
+branches:
+  except:
+    - gh-pages
+    - docs
+image: Visual Studio 2017
+before_build:
+  - nuget restore Telegram.Bot.Extensions.Exceptions.sln
+build:
+  project: Telegram.Bot.sln
+  publish_nuget: true
+  verbosity: normal
+after_build:
+  - cmd: cd test/Telegram.Bot.Tests.Unit
+  - cmd: dotnet test
+test: off
+nuget:
+  disable_publish_on_pr: true
+deploy:
+  - provider: NuGet
+    server: https://www.myget.org/F/
+    api_key:
+      secure: Dl2/
+    symbol_server: https://www.myget.org/F/
+    on:
+      branch: develop
+  - provider: NuGet
+    api_key:
+      secure: DqUxlR
+    on:
+      branch: master
+
+for:
+
+-
+  branches:
+    only:
+      - master
+
+  configuration: Release
+
+-
+  branches:
+    except:
+      - master
+
+  configuration: Debug
+  build:
+    publish_nuget_symbols: true
