@@ -7,7 +7,7 @@ branches:
   only:
   - develop
 script: >
-  cd "test/Telegram.Bot.Tests.Integ" &&
+  cd "test/Exceptions.Tests.Integ" &&
   dotnet test --configuration Release --list-tests &&
   dotnet xunit -configuration Release -nobuild -stoponfail -verbose
 notifications:

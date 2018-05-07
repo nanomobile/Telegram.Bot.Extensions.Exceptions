@@ -17,7 +17,7 @@ Before creating a pull request, make sure that your PR
 
 ## Tests
 
-Unit Tests and Systems Integration Tests are meant to be examples for our users  of how to interact with the Bot API. It is necessary for test methods to be highly readable, clear on their intents, and show expected behaviour of both systems.
+Unit Tests and Systems Integration Tests are meant to be examples for our users  of how to interact with the Bot API. It is necessary for test methods to be highly readable, clear on their intents, and show expected behavior of both systems.
 
 If commits in PR contain any changes to tests, ensure:
 
