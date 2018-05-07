@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
+    <VersionPrefix>0.5.0</VersionPrefix>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>Exceptions Extension Package for Telegram Bot API Client</Title>
+    <Description>Provide extended exceptions for Telegram Bot API Client error messages</Description>
+    <Authors>Poulad,karb0f0s</Authors>
+    <Copyright></Copyright>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/TelegramBots/Telegram.Bot.Extensions.Exceptions</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/TelegramBots/Telegram.Bot.Extensions.Exceptions/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/TelegramBots/Telegram.Bot.Extensions.Exceptions.git</RepositoryUrl>
+    <PackageTags>Telegram;Bot;Api;Exceptions</PackageTags>
+  </PropertyGroup>
+  <!-- when building on AppVeyor -->
+  <PropertyGroup Condition="'$(AppVeyor)' == 'True'">
+    <VersionSuffix Condition="'$(VersionSuffix)' != ''">$(VersionSuffix)-$(APPVEYOR_BUILD_NUMBER)</VersionSuffix>
+  </PropertyGroup>
+</Project>
